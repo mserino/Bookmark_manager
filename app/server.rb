@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/flash'
 require 'data_mapper'
 require './lib/link'
 require './lib/tag'
@@ -32,13 +33,19 @@ get '/tags/:text' do
 end
 
 get '/users/new' do
+	@user = User.new
 	erb :'users/new', :layout => :layout
 end
 
 post '/users' do
-	user = User.create(:email => params[:email],
+	@user = User.new(:email => params[:email],
 										 :password => params[:password],
 										 :password_confirmation => params[:password_confirmation])
-	session[:user_id] = user.id
-	redirect to('/')
+	if @user.save
+		session[:user_id] = @user.id
+		redirect to('/')
+	else
+		flash.now[:notice] = "Sorry, your password doesn't match"
+		erb :'users/new', :layout => :layout
+	end
 end

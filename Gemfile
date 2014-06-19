@@ -6,9 +6,10 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
 gem 'bcrypt-ruby'
+gem 'sinatra-flash'
 
 group :development, :test do
-	gem "rspec"
+	gem 'rspec'
 	gem 'database_cleaner'
-	gem 'capybara/spec'
+	gem 'capybara'
 end
