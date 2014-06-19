@@ -45,7 +45,7 @@ post '/users' do
 		session[:user_id] = @user.id
 		redirect to('/')
 	else
-		flash.now[:notice] = "Sorry, your password doesn't match"
+		flash.now[:errors] = @user.errors.full_messages
 		erb :'users/new', :layout => :layout
 	end
 end
