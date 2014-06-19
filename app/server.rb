@@ -37,6 +37,22 @@ get '/users/new' do
 	erb :'users/new', :layout => :layout
 end
 
+get '/sessions/new' do
+	erb :'sessions/new', :layout => :layout
+end
+
+post '/sessions' do
+	email, password = params[:email], params[:password]
+	user = User.authenticate(email, password)
+	if user
+		session[:user_id] = user.id
+		redirect to('/')
+	else
+		flash[:errors] = ["The email or password are incorrect"]
+		erb :'sessions/new', :layout => :layout
+	end
+end
+
 post '/users' do
 	@user = User.new(:email => params[:email],
 										 :password => params[:password],
