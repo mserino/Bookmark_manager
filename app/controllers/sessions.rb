@@ -1,4 +1,3 @@
-
 get '/sessions/new' do
 	erb :'sessions/new', :layout => :layout
 end

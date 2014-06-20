@@ -15,3 +15,21 @@ post '/users' do
 		erb :'users/new', :layout => :layout
 	end
 end
+
+
+get '/users/recover' do
+	erb :"users/recover", :layout => :layout
+end
+
+post '/recover' do
+	email = params[:email]
+	user = User.first(:email => email) # avoid having to memorise ascii codes
+	if user
+		user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
+		user.password_token_time = Time.now
+		user.save
+		flash[:notice] = ['An email with the instructions to reset the password has been sent.']
+	else
+		flash[:notice] = ["This email doesn't exist"]
+	end
+end

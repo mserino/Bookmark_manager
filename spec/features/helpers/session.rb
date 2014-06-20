@@ -14,4 +14,10 @@ module SessionHelpers
 		fill_in 'password', :with => password
 		click_button 'Sign in'		
 	end
+
+	def recover_password(email)
+		visit '/users/recover'
+		fill_in 'email', :with => email
+		click_button 'Send'
+	end
 end
