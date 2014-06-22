@@ -8,10 +8,10 @@ class User
 	property :email, String, :unique => true, :message => "This email is already taken"
 	property :password_digest, Text
 	property :password_token, Text
-	property :password_token_timestamp, Text
+	property :password_token_timestamp, DateTime
 
-	attr_reader :password, :password_token, :password_token_timestamp
-	attr_accessor :password_confirmation, :password_token, :password_token_timestamp
+	attr_reader :password
+	attr_accessor :password_confirmation
 	validates_confirmation_of :password, :message => "Your passwords don\'t match"
 
 	def password=(password)

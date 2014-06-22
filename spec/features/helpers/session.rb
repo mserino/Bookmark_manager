@@ -20,4 +20,5 @@ module SessionHelpers
 		fill_in 'email', :with => email
 		click_button 'Send'
 	end
+	
 end

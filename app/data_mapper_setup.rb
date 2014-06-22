@@ -10,3 +10,5 @@ require_relative 'models/user'
 
 # After declaring your models you should finalize them
 DataMapper.finalize
+
+DataMapper.auto_upgrade!
