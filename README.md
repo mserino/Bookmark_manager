@@ -7,4 +7,4 @@ A simple bookmark website built using Ruby, Sinatra, PostgreSQL, RSpec, Capybara
 
 You can find a working example following this link:
 
-(http://boiling-thicket-1942.herokuapp.com/)
+[Bookmark Manager](http://boiling-thicket-1942.herokuapp.com/)
