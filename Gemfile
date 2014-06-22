@@ -8,6 +8,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt-ruby'
 gem 'sinatra-flash'
+gem 'sinatra-partial'
 
 group :development, :test do
 	gem 'rspec'

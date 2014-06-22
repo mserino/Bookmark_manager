@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, Sans-serif;
+  background-image: url(/images/lightpaperfibers.png)
+}
+
+html, body {
+  height: 100%;
+}
+/* http://ryanfait.com/resources/footer-stick-to-bottom-of-page/ */
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -70px;
+}
+
+a {
+  text-decoration: none;
+  color: #e77413;
+}
+
+.paragraph {
+	color: #006600;
+}
+
+	.paragraph a {
+	 	color: #006600;
+	 }
+
+.button {
+  display: inline-block; /* display inline but have dimensions */
+  width: 110px;
+  background-color: #006600;
+  border: 2px solid white;
+  color: white; /*text colour*/
+  text-decoration: none; /*no underlining*/
+  padding: 5px 10px;
+  text-align: center;
+  /*border-radius: 4px; /*rounded corners*/*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0, 0.4); /*for readability*/
+  font-size: 16px;
+  cursor: pointer; /* pointer looks like a hand */
+}
+
+.button.highlighted {
+  background-color: #FF9900;
+}
+
+header {  
+  height: 40px;
+ 	background-color: black;
+ 	background-image: url(/images/green.jpg);
+  color: white;
+  display: flex; /* http://learnlayout.com/flexbox.html */
+  padding: 0 20px;
+}
+
+header a {
+	text-decoration: none;
+	color: #006600;
+}
+
+  /* every immediate child to be vertically centered */
+  header > * {
+    margin: auto 0;
+  }
+
+  header #logo {    
+    display: flex;
+    margin-right: 20px;
+    font-size: 22px;  
+  }
+
+  header #user-links {
+    flex: 1; /* http://learnlayout.com/flexbox.html */
+    -webkit-flex: 1;
+    text-align: right;
+    color: #006600;
+  }
+
+  header #user-links > * {
+    display: inline-block;
+  }
+
+#container {
+  background-color: rgba(140, 255, 0, 0.3);
+  margin: 30px;
+  /*box-shadow: 0 0 5px rgba(0,0,0,0.4);*/
+  padding: 10px;
+}
+
+.link {
+/*	background-color: #EEE;*/
+	background-image: url(/images/Green-Background.jpg);
+	/*box-shadow: 0 0 5px rgba(0,0,0,0.4);*/
+	/* 10 px for top and bottom, inherit from parent */
+	/* for left and right */
+	margin: 10px inherit;
+	padding: 15px 10px;
+}
+
+.link a.title {
+	letter-spacing: 1px;
+}
+
+.link .description {
+	margin: 10px inherit;
+}
+
+.link .source {
+	float: right;
+	font-size: 12px;
+}
+
+h1 {
+  font-size: 22px ;
+  color: #006600;
+}
+
+form {
+  text-align: left;
+}
+
+  form p {
+    margin: 10px 0;
+  }
+
+  form input[type="text"], form input[type="password"] {
+    border: 0px solid black;
+    font-size: 22px;
+    width: 400px;
+  }
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.1);
+}
+
+  footer > * {
+    margin: auto inherit;
+  }
+
+  footer img {
+    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+    vertical-align: top;
+  }
+
+  footer #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  footer p {
+    padding: 5px 25px;
+    float: right;
+  }
+
+  footer p a {
+    color: #990000;
+  }
+
+  /* http://ryanfait.com/resources/footer-stick-to-bottom-of-page/ */
+  .footer, .push {
+    height: 70px;
+  }
+
+#user-links {
+	display: inline-block;
+}
+
+.flash {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  background-color: rgba(140, 255, 0, 0.5);
+  border-radius: 4px;
+  /*box-shadow: 0 0 3px rgba(0,0,0,0.4);*/
+  color: #006600;
+}
+	
+  .flash.notice {
+    background-color: rgba(67,183,120,0.75);
+  }
+
+  .flash.error {
+   background-color: rgba(169,29,42,0.75); 
+   color: white;
+  }
