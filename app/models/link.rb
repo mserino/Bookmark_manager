@@ -1,3 +1,6 @@
+require 'dm-core'
+require 'dm-timestamps'
+
 # This class corresponds to a table in the database
 # We can use it to manipulate the data
 class Link
@@ -12,5 +15,7 @@ class Link
 	property :url,		String
 	property :description, Text
 	has n, :tags, :through => Resource
+
+	property :created_on, Date
 
 end
