@@ -13,9 +13,13 @@ Capybara.app = Sinatra::Application.new
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
+  
+	# config.raise_errors_for_deprecations!
+  
+  # config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
+	
 
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing

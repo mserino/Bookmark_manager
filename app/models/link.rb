@@ -10,6 +10,7 @@ class Link
 	property :id,			Serial
 	property :title,	String
 	property :url,		String
+	property :description, Text
 	has n, :tags, :through => Resource
 
 end
